@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2y6k3xrgfxkg"]
+[gd_scene load_steps=9 format=3 uid="uid://c2y6k3xrgfxkg"]
 
 [ext_resource type="PackedScene" uid="uid://bpjml0dikquyn" path="res://scenes/player.tscn" id="1_6t5sf"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_btpcu"]
 [ext_resource type="PackedScene" uid="uid://cuokidhyw8x80" path="res://scenes/mob.tscn" id="2_hvove"]
 [ext_resource type="PackedScene" uid="uid://06kd73pg2mic" path="res://scenes/hud.tscn" id="4_dot1h"]
-[ext_resource type="AudioStream" uid="uid://b1hsse7tnsrkv" path="res://art/House In a Forest Loop.ogg" id="5_1iy26"]
-[ext_resource type="AudioStream" uid="uid://byopvcdtbp4a3" path="res://art/gameover.wav" id="6_pfd0v"]
+[ext_resource type="AudioStream" uid="uid://chssjgj2rfn4d" path="res://art/marble kazoo.ogg" id="5_hys7d"]
+[ext_resource type="AudioStream" uid="uid://bwf81nxogqyfb" path="res://art/soicgameover.ogg" id="6_rqvhi"]
+[ext_resource type="Texture2D" uid="uid://ra223y30dyrl" path="res://art/MarbleZoneBackground.png" id="7_rqbau"]
 
 [sub_resource type="Curve2D" id="Curve2D_3mqyy"]
 _data = {
@@ -17,13 +18,9 @@ point_count = 5
 script = ExtResource("1_btpcu")
 mob_scene = ExtResource("2_hvove")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.653731, 0.71856, 0.995269, 1)
+[node name="MarbleZoneBackground" type="Sprite2D" parent="."]
+position = Vector2(240, 360)
+texture = ExtResource("7_rqbau")
 
 [node name="Player" parent="." instance=ExtResource("1_6t5sf")]
 
@@ -47,10 +44,10 @@ curve = SubResource("Curve2D_3mqyy")
 [node name="HUD" parent="." instance=ExtResource("4_dot1h")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_1iy26")
+stream = ExtResource("5_hys7d")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_pfd0v")
+stream = ExtResource("6_rqvhi")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

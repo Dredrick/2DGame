@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtn28vvexaqgo"
-path="res://.godot/imported/enemySwimming_1.png-dd0e11759dc3d624c8a704f6e98a3d80.ctex"
+uid="uid://ra223y30dyrl"
+path="res://.godot/imported/MarbleZoneBackground.png-8247640ce91076b3a05eb439d538a8df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemySwimming_1.png"
-dest_files=["res://.godot/imported/enemySwimming_1.png-dd0e11759dc3d624c8a704f6e98a3d80.ctex"]
+source_file="res://art/MarbleZoneBackground.png"
+dest_files=["res://.godot/imported/MarbleZoneBackground.png-8247640ce91076b3a05eb439d538a8df.ctex"]
 
 [params]
 

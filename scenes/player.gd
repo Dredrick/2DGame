@@ -32,13 +32,17 @@ func _process(delta):
 
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		# See the note below about boolean assignment.
-		$AnimatedSprite2D.flip_h = velocity.x < 0
 	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
-
+		if velocity.y < 0:
+			$AnimatedSprite2D.animation = "up"
+		else:
+			$AnimatedSprite2D.animation = "down"
+		
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
+	
 
 func _on_body_entered(body):
 	hide() # Player disappears after being hit.
