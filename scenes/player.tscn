@@ -44,13 +44,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pl4s6"]
-radius = 27.0
-height = 68.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_sa3gl"]
+radius = 17.0294
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_hwfhk")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -58,6 +56,7 @@ sprite_frames = SubResource("SpriteFrames_c7gea")
 animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_pl4s6")
+position = Vector2(-1, -7)
+shape = SubResource("CircleShape2D_sa3gl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
