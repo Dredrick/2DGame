@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://06kd73pg2mic" path="res://scenes/hud.tscn" id="4_dot1h"]
 [ext_resource type="AudioStream" uid="uid://chssjgj2rfn4d" path="res://art/marble kazoo.ogg" id="5_hys7d"]
 [ext_resource type="AudioStream" uid="uid://bwf81nxogqyfb" path="res://art/soicgameover.ogg" id="6_rqvhi"]
-[ext_resource type="Texture2D" uid="uid://ra223y30dyrl" path="res://art/MarbleZoneBackground.png" id="7_rqbau"]
+[ext_resource type="Texture2D" uid="uid://cdwhxd0pqr0ly" path="res://art/MarbelZoneBackgroundLarge.png" id="8_004ib"]
 
-[sub_resource type="Curve2D" id="Curve2D_3mqyy"]
+[sub_resource type="Curve2D" id="Curve2D_w2ior"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1280, 0, 0, 0, 0, 0, 1280, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
 
@@ -18,14 +18,14 @@ point_count = 5
 script = ExtResource("1_btpcu")
 mob_scene = ExtResource("2_hvove")
 
-[node name="MarbleZoneBackground" type="Sprite2D" parent="."]
-position = Vector2(240, 360)
-texture = ExtResource("7_rqbau")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("8_004ib")
 
 [node name="Player" parent="." instance=ExtResource("1_6t5sf")]
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -34,10 +34,10 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(640, 480)
 
 [node name="MobPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_3mqyy")
+curve = SubResource("Curve2D_w2ior")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
